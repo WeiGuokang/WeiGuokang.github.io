@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kangkang · 个人主页</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // 开启 Tailwind 的 class 模式暗色支持
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+    <div class="max-w-2xl mx-auto p-6 my-10 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transition-colors duration-300">
+
+        <!-- ====== 头部 + 暗色切换按钮 ====== -->
+        <div class="flex justify-between items-start mb-6">
+            <div class="text-center flex-1">
+                <h1 class="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    Kangkang 👋
+                </h1>
+                <p class="text-gray-500 dark:text-gray-400 mt-1">"纳西妲真可爱"</p>
+            </div>
+            <!-- 暗色模式切换按钮 -->
+            <button id="themeToggle" class="text-2xl text-gray-500 dark:text-gray-400 hover:text-blue-500 dark:hover:text-yellow-400 transition-colors">
+                <i id="themeIcon" class="fas fa-moon"></i>
+            </button>
+        </div>
+
+        <!-- ====== 用户信息卡片 ====== -->
+        <div class="flex flex-col items-center mb-6">
+            <img class="w-28 h-28 rounded-full object-cover border-4 border-blue-400 shadow-md transition-transform duration-300 hover:scale-110"
+                 src="images/profile.jpg"
+                 alt="Kangkang 头像" />
+            <h2 class="text-xl font-semibold mt-3 dark:text-white">Kangkang</h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                <i class="fas fa-id-card text-blue-400"></i> 原神UID · 232499384
+            </p>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+                <i class="fas fa-calendar-alt text-green-400"></i> 出生于 2007 年 9 月
+            </p>
+            <div class="mt-2 px-4 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-600 dark:text-gray-300">
+                <i class="fas fa-quote-left text-gray-400 mr-1"></i> 玩原神玩的
+            </div>
+        </div>
+
+        <!-- ====== B站信息卡片 ====== -->
+        <div class="my-6 p-4 border-2 border-pink-400 bg-pink-50 dark:bg-pink-900/30 rounded-xl">
+            <p class="text-sm font-medium text-pink-600 dark:text-pink-400 mb-2">
+                <i class="fab fa-bilibili text-pink-500"></i> B站 · 个人空间
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+                <div class="bg-white dark:bg-gray-700 p-2 rounded text-center shadow-sm">
+                    <p class="text-gray-400 text-xs">昵称</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-200">a6a3dc60294</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-2 rounded text-center shadow-sm">
+                    <p class="text-gray-400 text-xs">简介</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-200">懒,不写</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-2 rounded text-center shadow-sm">
+                    <p class="text-gray-400 text-xs">关注</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-200">40</p>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-2 rounded text-center shadow-sm">
+                    <p class="text-gray-400 text-xs">粉丝</p>
+                    <p class="font-semibold text-gray-700 dark:text-gray-200">4</p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a href="https://space.bilibili.com/1223859301" target="_blank"
+                   class="text-pink-500 hover:text-pink-700 text-sm font-medium transition">
+                    <i class="fab fa-bilibili mr-1"></i> 前往B站空间 →
+                </a>
+            </div>
+        </div>
+
+        <!-- ====== 活跃概况 ====== -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-6">
+            <div class="bg-blue-50 dark:bg-blue-900/30 p-3 rounded-xl text-center shadow-sm hover:shadow-md transition hover:-translate-y-1">
+                <i class="fas fa-user text-2xl text-blue-500"></i>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">用户名</p>
+                <p class="font-semibold text-sm dark:text-white">WeiGuokang</p>
+            </div>
+            <div class="bg-green-50 dark:bg-green-900/30 p-3 rounded-xl text-center shadow-sm hover:shadow-md transition hover:-translate-y-1">
+                <i class="fas fa-clock text-2xl text-green-500"></i>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">原神在线</p>
+                <p class="font-semibold text-sm dark:text-white">活跃中</p>
+            </div>
+            <div class="bg-purple-50 dark:bg-purple-900/30 p-3 rounded-xl text-center shadow-sm hover:shadow-md transition hover:-translate-y-1">
+                <i class="fas fa-trophy text-2xl text-purple-500"></i>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">等级</p>
+                <p class="font-semibold text-sm dark:text-white">Lv.60</p>
+            </div>
+            <div class="bg-yellow-50 dark:bg-yellow-900/30 p-3 rounded-xl text-center shadow-sm hover:shadow-md transition hover:-translate-y-1">
+                <i class="fas fa-fire text-2xl text-yellow-500"></i>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">活跃度</p>
+                <p class="font-semibold text-sm dark:text-white">🔥 100</p>
+            </div>
+        </div>
+
+        <!-- ====== 近期动态 ====== -->
+        <div class="my-6 p-4 border-l-4 border-blue-400 bg-gray-50 dark:bg-gray-700/50 rounded">
+            <p class="text-sm font-medium text-gray-600 dark:text-gray-300">
+                <i class="fas fa-rocket text-blue-500"></i> 近期动态
+            </p>
+            <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 mt-1 space-y-1">
+                <li>在6月参加<strong>高考</strong></li>
+                <li>正在学习<strong>C语言</strong></li>
+            </ul>
+        </div>
+
+        <!-- ====== 社交链接 ====== -->
+        <div class="flex justify-center gap-6 text-2xl text-gray-500 dark:text-gray-400 my-6 flex-wrap">
+            <a href="https://bbs.hiwear.net/members/3204/" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition" title="HiWear个人主页">
+                <i class="fas fa-user-circle"></i>
+            </a>
+            <a href="https://bbs.hiwear.net/" target="_blank" class="hover:text-purple-600 dark:hover:text-purple-400 transition" title="HiWear 论坛">
+                <i class="fas fa-comments"></i>
+            </a>
+            <a href="https://space.bilibili.com/1223859301" target="_blank" class="hover:text-pink-500 dark:hover:text-pink-400 transition" title="B站空间">
+                <i class="fab fa-bilibili"></i>
+            </a>
+            <!-- 新增 GitHub 链接 -->
+            <a href="https://github.com/WeiGuokang" target="_blank" class="hover:text-gray-700 dark:hover:text-gray-300 transition" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="hover:text-green-500 dark:hover:text-green-400 transition" title="私信">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="#" class="hover:text-red-500 dark:hover:text-red-400 transition" title="更多">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        </div>
+
+        <!-- ====== 互动按钮 ====== -->
+        <div class="text-center my-4">
+            <button onclick="alert('欢迎来到 Kangkang 的个人小站！🚀')"
+                    class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full shadow transition">
+                <i class="fas fa-hand-peace mr-2"></i>打个招呼
+            </button>
+        </div>
+
+        <!-- ====== 页脚（含访客计数器） ====== -->
+        <div class="text-center text-xs text-gray-400 dark:text-gray-500 border-t dark:border-gray-700 pt-4 mt-4">
+            <p>
+                © 2026 Kangkang · 用 GitHub Pages 构建
+                <span class="mx-2">·</span>
+                <i class="fas fa-eye mr-1"></i>
+                总访问量：<span id="busuanzi_value_site_pv" class="font-medium text-gray-600 dark:text-gray-300">加载中...</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- ====== 不蒜子计数器脚本 ====== -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <!-- ====== 暗色模式切换逻辑 ====== -->
+    <script>
+        (function() {
+            const toggleBtn = document.getElementById('themeToggle');
+            const icon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+
+            // 读取存储的主题偏好
+            const storedTheme = localStorage.getItem('theme');
+            // 如果存储为 dark 或系统偏好为暗色，则启用暗色
+            if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                html.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                html.classList.remove('dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+
+            // 切换事件
+            toggleBtn.addEventListener('click', function() {
+                if (html.classList.contains('dark')) {
+                    html.classList.remove('dark');
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>
